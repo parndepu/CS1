@@ -16,7 +16,7 @@ int main()
         std::cin >> number;
         std::vector<double>::iterator it;
         
-        if (opt == 'a' ) {
+        if (opt == 'a') {
             it = find(myNumbers.begin(), myNumbers.end(), number);
             
             // Bonus: detect odd numbers
@@ -24,6 +24,7 @@ int main()
                 myNumbers.push_back(number);
             }
         }
+        
         if (opt == 'r') {
             it = find(myNumbers.begin(), myNumbers.end(), number);
             
