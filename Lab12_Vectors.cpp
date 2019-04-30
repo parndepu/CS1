@@ -18,7 +18,6 @@ int main()
         
         if (opt == 'a') {
             it = find(myNumbers.begin(), myNumbers.end(), number);
-            
             // Bonus: detect odd numbers
             if (it == myNumbers.end() && (int)number % 2 != 0) {
                 myNumbers.push_back(number);
@@ -27,7 +26,6 @@ int main()
         
         if (opt == 'r') {
             it = find(myNumbers.begin(), myNumbers.end(), number);
-            
             // Remove number if exists
             if (it != myNumbers.end()){
                 myNumbers.erase(it);
