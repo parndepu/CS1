@@ -1,0 +1,4 @@
+# Ignore visuals studio code
+.vscode
+# Ignore default output
+.out
