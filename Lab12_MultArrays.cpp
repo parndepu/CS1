@@ -1,13 +1,14 @@
-#include <iostream>
+// Track shots in battleship game
+// (c) 2019, Suphanut Jamonnak
 
-using std::cout; using std::cin; using std::endl;
+#include <iostream>
 
 int main()
 {
     int oceanLength = 6; int oceanWidth = 6;
     bool shots[oceanLength][oceanWidth];
     
-    // initialize 
+    // Initialize all default shots
     for (int i = 0; i < oceanLength; ++i) {
         for (int j = 0; j < oceanWidth; ++j) {
             shots[i][j] = false;
@@ -17,11 +18,11 @@ int main()
     char shot;
     int row; char col;
     
-    cout << "Another shot? [y/n] ";
-    cin >> shot;
+    std::cout << "Another shot? [y/n] ";
+    std::cin >> shot;
     while (shot != 'n') {
-        cout << "Location? ";
-        cin >> col >> row;
+        std::cout << "Location? ";
+        std::cin >> col >> row;
         
         // Change character ascii to integer
         int col_j = (int)col - 97;
@@ -30,27 +31,27 @@ int main()
         // Fire from input location
         if (shots[row_i][col_j] == false)
             shots[row_i][col_j] = true;
-            
-        // Output all shots
-        cout << "All fired shots" << endl;
-        
+
+
+        std::cout << "All fired shots" << std::endl;
         // Print all row characters
         for (int j = 0; j < oceanWidth; ++j) {
-            cout << " " << char(97 + j);
+            std::cout << " " << char(97 + j);
         }
-        cout << endl;
-        
+        std::cout << std::endl;
         // Output all shots
         for (int i = 0; i < oceanLength; ++i) {
-            cout << i + 1;
+            std::cout << i + 1;
             for (int j = 0; j < oceanWidth; ++j) {
-                (shots[i][j]) ? cout << "* " : cout << "  ";
+                (shots[i][j]) ? std::cout << "* " : std::cout << "  ";
             }
-            cout << endl;
+            std::cout << std::endl;
         }
         
         // Take input again
-        cout << "Another shot? [y/n] ";
-        cin >> shot;
+        std::cout << "Another shot? [y/n] ";
+        std::cin >> shot;
     }
+
+    std::cout << "Exit Program" << std::endl;
 }
